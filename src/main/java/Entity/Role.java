@@ -19,9 +19,9 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="nameRol",length = 50,nullable = false)
-    private String name;
+    @Column(name="nameRole",length = 50,nullable = false)
+    private String nameRole;
 
-    @Column(name="descriptionRol",length = 250, nullable = false)
-    private String descprition;
+    @Column(name="descriptionRole",length = 250, nullable = false)
+    private String descriptionRole;
 }

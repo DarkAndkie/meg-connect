@@ -1,4 +1,7 @@
 package Repository;
 
-public interface RepositoryUserLikedPost {
+import Entity.UserLikedPost;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RepositoryUserLikedPost extends JpaRepository<UserLikedPost,Long> {
 }

@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "User_meg")
 @NoArgsConstructor
@@ -27,7 +29,8 @@ public class User {
 
     @Column(name = "phone", length = 10, nullable = false)
     private String phone;
-
+    @Column(name="birth_date")
+    private LocalDateTime birthDate;
     @Column(name="password",length = 255,nullable = false)
     private String password;
 

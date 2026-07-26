@@ -6,16 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class UserRegisterDto{
+public class UserPostinteractDto {
 
-    private Long id;
-    private String name;
-    private String email;
-    private String phone;
-    private String age;
-    private String Password;
+    private Long postId;
+    private boolean liked;
+    private List<UserCommentPostDto> userComments;
 }

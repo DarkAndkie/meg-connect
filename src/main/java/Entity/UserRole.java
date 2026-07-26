@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class UserRol {
+public class UserRole {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

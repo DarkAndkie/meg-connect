@@ -21,7 +21,7 @@ public class UserBlocked {
 
     @ManyToOne
     @JoinColumn(name="user")
-    private User usuario;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name="blocked_user")

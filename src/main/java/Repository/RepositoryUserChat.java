@@ -1,4 +1,6 @@
 package Repository;
 
-public interface UserChat {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RepositoryUserChat extends JpaRepository<RepositoryUserChat,Long> {
 }

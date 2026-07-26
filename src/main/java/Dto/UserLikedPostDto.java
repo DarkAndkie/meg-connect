@@ -10,12 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class UserRegisterDto{
+public class UserLikedPostDto {
 
-    private Long id;
-    private String name;
-    private String email;
-    private String phone;
-    private String age;
-    private String Password;
+    private Long postId;
 }

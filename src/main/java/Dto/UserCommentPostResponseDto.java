@@ -1,19 +1,17 @@
 package Dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
-@NoArgsConstructor
-@Setter
 @Getter
-public class PostImageDto {
+@Setter
+@NoArgsConstructor
+public class UserCommentPostResponseDto {
 
-    private String AltTex;
-    private String SrcImage;
-
-
+    private Long idUser;
+    private Long idPost;
+    private String contentPost;
 }

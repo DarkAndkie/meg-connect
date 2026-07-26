@@ -1,6 +1,5 @@
 package Dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,11 +11,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class UserChatMessageDto {
+public class UserChatMessageRegisterDto {
 
     private String message;
     private LocalDateTime sendDate;
-    private Long userRemittent;
     private boolean message_Checkout;
     private Long chatId;
 }

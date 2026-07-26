@@ -23,10 +23,10 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name="user_id",nullable = false)
-    private User user_post;
+    private User userPost;
 
     @Column(name="date_upload",nullable = false)
-    private LocalDateTime date_upload;
+    private LocalDateTime uploadDate;
 
     /*
 
