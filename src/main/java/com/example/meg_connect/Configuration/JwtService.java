@@ -1,11 +1,11 @@
-package com.example.meg_connect.Service;
+package com.example.meg_connect.Configuration;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import java.security.Key;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
-
+@Service
 public class JwtService {
 @Value("${security.jwt.secret-key}")
     private String secretKey;
@@ -47,10 +47,10 @@ private String buildToken(
 ){
     return Jwts
             .builder()
-            .setClaims(extraClaims)
-            .setSubject(userDetails.getUsername())
-            .setIssuedAt(new Date(System.currentTimeMillis()))
-            .setExpiration(new Date(System.currentTimeMillis() + expirationTime))
+            .claims(extraClaims)
+            .subject(userDetails.getUsername())
+            .issuedAt(new Date(System.currentTimeMillis()))
+            .expiration(new Date(System.currentTimeMillis() + expirationTime))
             .signWith(getSingInKey(),SignatureAlgorithm.HS256)
             .compact();
 }

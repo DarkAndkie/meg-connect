@@ -3,10 +3,7 @@ package com.example.meg_connect.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,6 +20,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class User implements UserDetails {
 
     @Id
@@ -41,7 +39,7 @@ public class User implements UserDetails {
     @Column(name = "password", length = 255, nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "user_meg", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<UserRole> roles;
     //Al parecer spring security tiene unos requerimientos para reconocer a la entidad usuario a modo
     //de funciones, que weba encima aun si no uso alguna debo poner todas las interfaces
@@ -56,7 +54,7 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return this.roles.stream()
-                .map(usuarioRol1 -> new SimpleGrantedAuthority("ROLE_" + usuarioRol1.getRole()))
+                .map(usuarioRoll -> new SimpleGrantedAuthority("ROLE_" + usuarioRoll.getRole()))
                 .collect(Collectors.toList());
 
     }
